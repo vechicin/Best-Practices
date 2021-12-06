@@ -73,11 +73,7 @@ function renderTask() {
       saveButton.type = 'submit';
       saveButton.innerText = 'Save';
       taskLabel.innerText = '';
-      li.removeChild(editButton);
-      li.removeChild(removeButton);
-      li.removeChild(checkbox);
-      li.appendChild(editInput);
-      li.appendChild(saveButton);
+      editButton.removeParentElement();
       saveButton.addEventListener('click', () => {
         task.name = editInput.value;
         saveToLocalStorage();
@@ -100,10 +96,10 @@ function clearAllTasks(array) {
 }
 
 function setIndex(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    const element = array[i];
-    element.id = parseInt([i], 10) + 1;
-  }
+  array.forEach(item, index => {
+    const element = item;
+    element.id = parseInt(index, 10) + 1;
+  });
 }
 
 function updateToTrue(object) {
