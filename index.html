@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+      </style>
+</head>
+<body>
+  <h1>Today's To Do</h1>
+
+  <ul class="list">
+  </ul>
+
+  <form id="task-form" action="#">
+    <input type="text" id="task-input" placeholder="Enter task here">
+    <div class="button-container">
+      <button type="submit" class="submit-task">Submit</button>
+      <button type="reset" class="remove-tasks">Clear All Completed Tasks</button>
+    </div>
+  </form>
+
+  <template id="template">
+    <li class="task">
+      <input class="checkbox" type="checkbox">
+      <label></label>
+    </li>
+  </template>
+</body>
+</html>
